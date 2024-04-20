@@ -29,7 +29,7 @@ public class RunController {
         if (run.isPresent()) {
             return run.get();
         } else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            throw new RunNotFoundException();
         }
     }
 
@@ -45,7 +45,7 @@ public class RunController {
         if (updatedRun.isPresent()) {
             return updatedRun.get();
         }
-        throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        throw new RunNotFoundException();
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
