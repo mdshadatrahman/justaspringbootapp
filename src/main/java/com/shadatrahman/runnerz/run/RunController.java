@@ -1,5 +1,6 @@
 package com.shadatrahman.runnerz.run;
 
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpStatusCodeException;
@@ -35,7 +36,7 @@ public class RunController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("")
-    Run create(@RequestBody Run run) {
+    Run create(@Valid @RequestBody Run run) {
         return runRepository.create(run);
     }
 
